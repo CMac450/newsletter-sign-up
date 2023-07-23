@@ -5,7 +5,13 @@ import './App.css'
 import { DesktopDesign } from "./components/desktop"
 
 function App() {
-  const [count, setCount] = useState(0)
+  let email = document.getElementById('email').value;
+
+  const validateInput = (event) => {
+    if (email !== "") {
+      document.getElementById("email").style.outline
+    }
+  }
 
   return (
     <>
