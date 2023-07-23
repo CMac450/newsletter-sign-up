@@ -10,21 +10,21 @@
   /* background-color: hsl(234, 29%, 20%); */
 }
 
-p, h1, h2, h3,h4, h5, h6, label {
+p, h1, h2, h3,h4, h5, h6, label, ul {
   font-family: Roboto;
   color: hsl(234, 29%, 20%);
 }
 
 p.heading {
   font-weight: 700;
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 59px;
+  margin-bottom: 25px;
 }
 
 .container {
   background-color: hsl(0, 0%, 100%);
   height: 593px;
-  width: 870px;
+  width: 850px;
   border-radius: 25px;
   margin: auto auto;
   display: flex;
@@ -38,6 +38,7 @@ p.heading {
 .inputs {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
   /* border: 2px solid red; */
 }
 
@@ -47,7 +48,8 @@ input {
   border-radius: 8px;
   width: 95%;
   height: 50px;
-  border: 1px solid hsl(231, 7%, 60%);
+  border: 1px solid hsl(0, 0%, 83%);
+  color: hsl(0, 0%, 30%);
   margin-top: 10px;
   padding: 0px;
   margin-bottom: 25px;
@@ -75,11 +77,16 @@ label {
 p.body-text {
   font-weight: 500;
   font-size: 15px;
+  margin-bottom: 25px;
 }
 
 ul {
   list-style-image: url("../assets/images/icon-list.svg");
   list-style-position: outside;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 35px;
+  margin-bottom: 30px;
 }
 
 li {
@@ -116,4 +123,35 @@ button:hover {
   background-image: linear-gradient(to right, hsl(4, 100%, 67%), hsl(27, 100%, 67%));
   color: hsl(0, 0%, 100%);
   box-shadow: -10px 20px 20px 2px  hsla(4, 100%, 67%, 0.397);
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  line-height: 3px;
+}
+
+.icon-list {
+  padding-right: 15px;
+}
+
+.error-text {
+  display: none;
+}
+
+.input-label {
+  /* display: flex;
+  flex-direction: row; */
+  display: inline-block;
+
+}
+
+.label-left {
+  float: left;
+  margin-right: 90px;
+}
+
+.label-right {
+  float: right;
+  margin-left: 90px;
 }
