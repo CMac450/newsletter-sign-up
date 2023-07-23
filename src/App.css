@@ -1,42 +1,106 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: center; */
+  /* background-color: hsl(234, 29%, 20%); */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.desktop {
+  /* background-color: hsl(234, 29%, 20%); */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p, h1, h2, h3,h4, h5, h6, label {
+  font-family: Roboto;
+  color: hsl(234, 29%, 20%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+p.heading {
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
-.card {
-  padding: 2em;
+.container {
+  background-color: hsl(0, 0%, 100%);
+  height: 593px;
+  width: 870px;
+  border-radius: 25px;
+  margin: auto auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 50px;
+  /* padding-right: 20px; */
 }
 
-.read-the-docs {
-  color: #888;
+.inputs {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+}
+
+input {
+  /* width: 100%; */
+  /* padding: 20px 20px; */
+  border-radius: 8px;
+  width: 95%;
+  height: 50px;
+  border: 1px solid hsl(231, 7%, 60%);
+  margin-top: 10px;
+  padding: 0px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  padding-left: 20px;
+  font-weight: 500;
+}
+
+label {
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.text-div {
+  padding-right: 50px;
+  width: 370px;
+  /* border: 2px solid blue; */
+}
+
+p.body-text {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+ul {
+  list-style-image: url("../assets/images/icon-list.svg");
+  list-style-position: outside;
+}
+
+li {
+  /* align-items: center; */
+  /* display: inline-block;
+  vertical-align: middle; */
+  align-items:center
+}
+
+li::before {
+  /* align-items: center; */
+  /* display: inline-block;
+  vertical-align: middle; */
+  align-items:center;
+  vertical-align: middle;
+}
+
+button {
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  padding: 20px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: 500;
+  width: 100%;
+  /* width: 100%; */
 }
