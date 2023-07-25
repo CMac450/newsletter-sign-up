@@ -3,7 +3,15 @@
 }
 
 
-p, h1, h2, h3,h4, h5, h6, label, ul {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+ul {
   font-family: Roboto;
   color: hsl(234, 29%, 20%);
 }
@@ -48,7 +56,10 @@ input {
   font-weight: 500;
 }
 
-input:hover, input:active, input:focus, input:focus-within {
+input:hover,
+input:active,
+input:focus,
+input:focus-within {
   outline: 1px solid hsl(234, 29%, 20%);
   cursor: pointer;
 }
@@ -104,7 +115,7 @@ button {
 button:hover {
   background-image: linear-gradient(to right, hsl(4, 100%, 67%), hsl(27, 100%, 67%));
   color: hsl(0, 0%, 100%);
-  box-shadow: -10px 20px 20px 2px  hsla(4, 100%, 67%, 0.397);
+  box-shadow: -10px 20px 20px 2px hsla(4, 100%, 67%, 0.397);
 }
 
 .list {
@@ -166,7 +177,7 @@ p.body-text-success {
 }
 
 button.dismiss {
-  width: 360px ;
+  width: 360px;
   font-size: 15px;
 }
 
@@ -184,12 +195,12 @@ img.success-icon {
 @media screen and (max-width: 375px) {
   :root {
     background-color: hsl(0, 0%, 100%);
-    
+
   }
 
-   body {
+  body {
     margin: 0px 0px;
-   }
+  }
 
   .container-subscribe {
     display: none;
@@ -235,16 +246,31 @@ img.success-icon {
     display: flex;
     flex-direction: row;
     line-height: 25px;
-    
+
   }
 
   .list-mobile p {
     margin-top: 0px;
     margin-bottom: 10px;
   }
-  
-  .icon-list {
-    vertical-align: baseline;
+
+  img.icon-list {
+    vertical-align: text-top;
     padding-right: 15px;
+    display: inline;
   }
+
+  .dismiss {
+    width: 200px;
+  }
+
+  .input-label-mobile {
+    display: inline-block;
+  }
+
+
+  .error-text-mobile {
+    /* display: none; */
+  }
+
 }
