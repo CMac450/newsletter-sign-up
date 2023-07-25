@@ -1,40 +1,34 @@
 import { useState } from 'react'
 import './App.css'
 
-function MobileDesignComponent({ }) { ///showSubscribe, validateInput, inputemail, setShowSuccess, setShowSubscribe 
-
+function MobileDesignComponent({ }) {
 
     const [showSuccess, setShowSuccess] = useState(false);
     const [showSubscribe, setShowSubscribe] = useState(true);
     const [inputemail, setInputEmail] = useState("");
+    const [showFormatError, setShowFormatError] = useState(false);
+    const [showEmptyFieldError, setShowEmptyFieldError] = useState(false)
 
     const validateInput = (event) => {
         event.preventDefault();
         let email = document.getElementById('email-mobile').value;
         let emailPattern = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$');
 
-        console.log(email)
-
         if (email === "") {
+            setShowEmptyFieldError(true);
             document.getElementById("email-mobile").style.outline = "1px solid hsl(0, 100%, 67%)";
             document.getElementById("email-mobile").style.backgroundColor = "hsla(4, 100%, 80%, 0.26)";
             document.getElementById("email-mobile").style.color = "hsl(0, 100%, 67%)";
-            document.getElementById('error-text-mobile').style.display = "none"
-            console.log('HIT2')
         } else if (!emailPattern.test(email)) {
-            document.getElementById("email").style.outline = "1px solid hsl(0, 100%, 67%)";
-            document.getElementById("email").style.backgroundColor = "hsla(4, 100%, 80%, 0.26)";
-            document.getElementById("email").style.color = "hsl(0, 100%, 67%)";
-            document.getElementById('error-text-mobile').style.display = "inline-block"
-            document.getElementById('error-text-mobile').style.color = "hsl(0, 100%, 67%)"
-            console.log("NOT a match!");
+            setShowEmptyFieldError(false);
+            setShowFormatError(true);
+            document.getElementById("email-mobile").style.outline = "1px solid hsl(0, 100%, 67%)";
+            document.getElementById("email-mobile").style.backgroundColor = "hsla(4, 100%, 80%, 0.26)";
+            document.getElementById("email-mobile").style.color = "1px solid hsl(0, 100%, 67%)";
         } else {
             document.getElementById("email-mobile").style.outline = "1px solid hsl(0, 0%, 83%)";
             document.getElementById("email-mobile").style.backgroundColor = "hsla(4, 100%, 80%, 0)";
             document.getElementById("email-mobile").style.color = "hsl(0, 0%, 30%)";
-            document.getElementById('error-text-mobile').style.display = "none"
-            console.log(`input was NOT empty~`);
-            console.log(`input matches regexpattern~`);
             setShowSubscribe(false);
             setShowSuccess(true);
             setInputEmail(email);
@@ -44,7 +38,7 @@ function MobileDesignComponent({ }) { ///showSubscribe, validateInput, inputemai
     return (
         <>
             {
-                showSubscribe ? <MobileRegularComponent validateInput={validateInput} />
+                showSubscribe ? <MobileRegularComponent validateInput={validateInput} showFormatError={showFormatError} showEmptyFieldError={showEmptyFieldError} />
                     :
                     <MobileSuccessComponent inputemail={inputemail} setShowSuccess={setShowSuccess} setShowSubscribe={setShowSubscribe} />
             }
@@ -52,7 +46,7 @@ function MobileDesignComponent({ }) { ///showSubscribe, validateInput, inputemai
     )
 }
 
-function MobileRegularComponent({ validateInput }) {
+function MobileRegularComponent({ validateInput, showFormatError, showEmptyFieldError }) {
     return (
         <>
             <div className='container-mobile'>
@@ -87,9 +81,26 @@ function MobileRegularComponent({ validateInput }) {
                     <form className='form-mobile' id="form-mobile" name="email-input-mobile" action="" method="" autoComplete='off'>
                         <div className='inputs'>
                             <div>
-                                <div className='input-label-mobile'>
-                                    <div className='label-left'><label htmlFor='email'>Email address</label></div>
-                                    <div className='label-right'><label id='error-text-mobile' className='error-text-mobile' htmlFor='email'>Valid email required</label></div>
+                                <div className='labels'>
+                                    {showEmptyFieldError ?
+                                        (
+                                            <>
+                                                <div className='label-left-mobile'><label htmlFor='email'>Email address</label></div>
+                                                <div className='label-right-mobile'><label class="error-text-mobile" htmlFor='email'>Email required</label></div>
+                                            </>
+                                        ) :
+                                        showFormatError ?
+                                            (
+                                                <>
+                                                    <div className='label-left-mobile'><label htmlFor='email'>Email address</label></div>
+                                                    <div className='label-right-mobile'><label class="error-text-mobile" htmlFor='email'>Valid email required</label></div>
+                                                </>
+                                            ) :
+                                            (
+                                                <div className='label-left-mobile'><label htmlFor='email'>Email address</label></div>
+                                            )
+                                    }
+
                                 </div>
                                 <input type="email" placeholder='email@company.com' id="email-mobile" className='email-input-mobile' />
                             </div>
@@ -107,15 +118,15 @@ function MobileRegularComponent({ validateInput }) {
 function MobileSuccessComponent({ inputemail, setShowSuccess, setShowSubscribe }) {
     return (
         <>
-            <div className='main-content-mobile'>
-                <div className='container-mobile-success'>
+            <div className='container-mobile-success'>
+                <div>
                     <img src="../assets/images/icon-success.svg" />
                 </div>
                 <div className>
                     <p className='heading-mobile'>Thanks for subscribing!</p>
                 </div>
-                <div>
-                    <p className='body-text-success'>
+                <div className='body-text-success'>
+                    <p >
                         A confirmation email has been sent to <strong>{inputemail}</strong>. Please open it and click the button inside to confirm your subscription.
                     </p>
                 </div>
