@@ -44,7 +44,7 @@ p.heading {
 
 input {
   border-radius: 8px;
-  width: 95%;
+  width: 94%;
   height: 50px;
   border: 1px solid hsl(0, 0%, 83%);
   color: hsl(0, 0%, 30%);
@@ -80,24 +80,6 @@ p.body-text {
   margin-bottom: 25px;
 }
 
-/* ul {
-  list-style-image: url("../assets/images/icon-list.svg");
-  list-style-position: outside;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 35px;
-  margin-bottom: 30px;
-}
-
-li {
-  align-items:center
-}
-
-li::before {
-  align-items:center;
-  vertical-align: middle;
-} */
-
 button {
   color: hsl(234, 29%, 20%);
   background-color: hsl(234, 29%, 20%);
@@ -129,22 +111,16 @@ button:hover {
 }
 
 .error-text {
-  display: none;
+  color: hsl(0, 100%, 67%);
 }
 
-.input-label {
-  display: inline-block;
-
-}
 
 .label-left {
   float: left;
-  margin-right: 90px;
 }
 
 .label-right {
   float: right;
-  margin-left: 90px;
 }
 
 .container-success {
@@ -195,7 +171,6 @@ img.success-icon {
 @media screen and (max-width: 375px) {
   :root {
     background-color: hsl(0, 0%, 100%);
-
   }
 
   body {
@@ -212,30 +187,30 @@ img.success-icon {
   }
 
   .mobile-image-header {
-    /* width: auto;
-    height: 284px;
-    object-fit: fill; */
-    /* width: 200px;
-    height: 300px; */
-    /* margin: auto;
-    padding: 0px;
-    object-fit: cover; */
     height: 284px;
     width: 375px;
-    /* border: 2px solid pink; */
   }
 
   .main-content-mobile {
-    /* border: 1px solid green; */
     padding-left: 20px;
     padding-right: 20px;
-    /* padding-top: 10px; */
+
+  }
+
+  .container-mobile-success {
+    padding-left: 20px;
+    margin-top: 40%
+  }
+
+  .body-text-success {
+    line-height: 25px;
   }
 
   p.heading-mobile {
     font-weight: 700;
     font-size: 40px;
     margin-bottom: 20px;
+    line-height: 40px;
   }
 
   p.body-text-mobile {
@@ -246,7 +221,6 @@ img.success-icon {
     display: flex;
     flex-direction: row;
     line-height: 25px;
-
   }
 
   .list-mobile p {
@@ -260,17 +234,45 @@ img.success-icon {
     display: inline;
   }
 
-  .dismiss {
-    width: 200px;
+  button.dismiss {
+    width: 335px;
+    margin-top: 85%;
+    align-content: center;
+    font-size: 16px;
   }
 
-  .input-label-mobile {
-    display: inline-block;
+  .labels {
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
   }
 
+  .label-left-mobile {
+    flex: 50%;
+   
+  }
+
+  .label-right-mobile {
+    flex: 50%;
+    text-align: right;
+  }
+/* 
+  input {
+    border-radius: 8px;
+    width: 95%;
+    height: 50px;
+    border: 1px solid hsl(0, 0%, 83%);
+    color: hsl(0, 0%, 30%);
+    margin-top: 10px;
+    padding: 0px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    padding-left: 20px;
+    font-weight: 500;
+  } */
 
   .error-text-mobile {
-    /* display: none; */
+    color: hsl(0, 100%, 67%);
   }
 
 }
