@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { DesktopDesign } from "./components/desktop"
 
 function App() {
+
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showSubscribe, setShowSubscribe] = useState(true);
+  const [inputemail, setInputEmail] = useState("");
+
   const validateInput = (event) => {
     event.preventDefault();
     let email = document.getElementById('email').value;
@@ -26,12 +28,32 @@ function App() {
       document.getElementById('error-text').style.display = "none"
       console.log(`input was NOT empty~`);
       console.log(`input matches regexpattern~`);
+      setShowSubscribe(false);
+      setShowSuccess(true);
+      setInputEmail(email);
     }
   }
 
   return (
     <>
-      <div className='container'>
+      {
+        showSubscribe ? <SubscribeComponent validateInput={validateInput} />
+          :
+          <SuccessComponent inputemail={inputemail} setShowSuccess={setShowSuccess} setShowSubscribe={setShowSubscribe} />
+
+      }
+
+      <MobileComponent />
+    </>
+  )
+}
+
+
+
+function SubscribeComponent({ validateInput }) {
+  return (
+    <>
+      <div className='container-subscribe'>
         <div className='text-div'>
           <p className='heading'>Stay updated!</p>
           <p className='body-text'>
@@ -53,7 +75,7 @@ function App() {
               <p>And much more!</p>
             </div>
           </div>
-          
+
           <form className='form' id="form" name="email-input" action="" method="" autoComplete='off'>
             <div className='inputs'>
               <div>
@@ -73,6 +95,80 @@ function App() {
         <div className='img'>
           <img src="../assets/images/illustration-sign-up-desktop.svg" />
         </div>
+      </div>
+    </>
+  )
+}
+
+function SuccessComponent({ inputemail, setShowSuccess, setShowSubscribe }) {
+  return (
+    <>
+      <div className='container-success'>
+        <div><img src="../assets/images/icon-success.svg" className='success-icon' /></div>
+        <div>
+          <p className='heading-success'>Thanks for subscribing!</p>
+        </div>
+        <div>
+          <p className='body-text-success'>
+            A confirmation email has been sent to <strong>{inputemail}</strong>. Please open it and click the button inside to confirm your subscription.
+          </p>
+        </div>
+        <div>
+          <button className='dismiss' onClick={() => { setShowSuccess(false); setShowSubscribe(true) }}>Dismiss message</button>
+        </div>
+      </div>
+    </>
+  )
+}
+
+function MobileComponent({ }) {
+  return (
+    <>
+      <div className='container-mobile'>
+        <div className='mobile-image-header'>
+          <img src="../assets/images/illustration-sign-up-mobile.svg" />
+        </div>
+
+        <div className='main-content-mobile'>
+          <div className>
+            <p className='heading-mobile'>Stay updated!</p>
+          </div>
+          <div >
+            <p className='body-text-mobile'>Join the 60,000+ product managers receiving monthly updates on:</p>
+          </div>
+
+          <div>
+            <div className='list-mobile'>
+              <img src="../assets/images/icon-list.svg" className='icon-list' />
+              <p>Product discovery and building what matters</p>
+            </div>
+            <div className='list-mobile'>
+              <img src="../assets/images/icon-list.svg" className='icon-list' />
+              <p>Measuring to ensure updates are a success</p>
+            </div>
+
+            <div className='list-mobile'>
+              <img src="../assets/images/icon-list.svg" className='icon-list' />
+              <p>And much more!</p>
+            </div>
+          </div>
+
+          <form className='form-mobile' id="form-mobile" name="email-input-mobile" action="" method="" autoComplete='off'>
+            <div className='inputs'>
+              <div>
+                <div className='input-label-mobile'>
+                  <div className='label-left'><label htmlFor='email'>Email address</label><br /></div>
+                  <div className='label-right'><label id='error-text' className='error-text' htmlFor='email'>Valid email required</label></div>
+                </div>
+                <input type="email" placeholder='email@company.com' id="email" className='email-input-mobile' />
+              </div>
+              <div>
+                <button type='button' className='subscribe-button-mobile' onClick={(e) => { validateInput(e); }}>Subscribe to monthly newsletter</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
       </div>
     </>
   )
