@@ -78,7 +78,7 @@ function SubscribeComponent({ validateInput, showFormatError, showEmptyFieldErro
             </div>
           </div>
 
-          <form className='form' id="form" name="email-input" action="" method="" autoComplete='off'>
+          <form className='form' id="form" name="email-input" autoComplete='off'>
             <div className='inputs'>
               <div>
                 <div className='labels'>

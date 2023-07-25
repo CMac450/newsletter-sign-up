@@ -78,7 +78,7 @@ function MobileRegularComponent({ validateInput, showFormatError, showEmptyField
                         </div>
                     </div>
 
-                    <form className='form-mobile' id="form-mobile" name="email-input-mobile" action="" method="" autoComplete='off'>
+                    <form className='form-mobile' id="form-mobile" name="email-input-mobile" autoComplete='off'>
                         <div className='inputs'>
                             <div>
                                 <div className='labels'>
