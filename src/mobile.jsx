@@ -51,7 +51,7 @@ function MobileRegularComponent({ validateInput, showFormatError, showEmptyField
         <>
             <div className='container-mobile'>
                 <div className='mobile-image-header'>
-                    <img src="../assets/images/illustration-sign-up-mobile.svg" />
+                    <img src="../assets/images/illustration-sign-up-mobile.svg" alt="Two llustrated desktop screens overlapping each other on a red gradient background."/>
                 </div>
 
                 <div className='main-content-mobile'>
@@ -64,16 +64,16 @@ function MobileRegularComponent({ validateInput, showFormatError, showEmptyField
 
                     <div>
                         <div className='list-mobile'>
-                            <div><img src="../assets/images/icon-list.svg" className='icon-list' /></div>
+                            <div><img src="../assets/images/icon-list.svg" className='icon-list' alt="A small red circle with a white check mark in its center"/></div>
                             <div><p>Product discovery and building what matters</p></div>
                         </div>
                         <div className='list-mobile'>
-                            <div><img src="../assets/images/icon-list.svg" className='icon-list' /></div>
+                            <div><img src="../assets/images/icon-list.svg" className='icon-list' alt="A small red circle with a white check mark in its center"/></div>
                             <div><p>Measuring to ensure updates are a success</p></div>
                         </div>
 
                         <div className='list-mobile'>
-                            <div><img src="../assets/images/icon-list.svg" className='icon-list' /></div>
+                            <div><img src="../assets/images/icon-list.svg" className='icon-list' alt="A small red circle with a white check mark in its center"/></div>
                             <div><p>And much more!</p></div>
                         </div>
                     </div>

@@ -64,16 +64,16 @@ function SubscribeComponent({ validateInput, showFormatError, showEmptyFieldErro
 
           <div>
             <div className='list'>
-              <img src="../assets/images/icon-list.svg" className='icon-list' />
+              <img src="../assets/images/icon-list.svg" className='icon-list' alt="A small red circle with a white check mark in its center"/>
               <p>Product discovery and building what matters</p>
             </div>
             <div className='list'>
-              <img src="../assets/images/icon-list.svg" className='icon-list' />
+              <img src="../assets/images/icon-list.svg" className='icon-list' alt="A small red circle with a white check mark in its center"/>
               <p>Measuring to ensure updates are a success</p>
             </div>
 
             <div className='list'>
-              <img src="../assets/images/icon-list.svg" className='icon-list' />
+              <img src="../assets/images/icon-list.svg" className='icon-list' alt="A small red circle with a white check mark in its center"/>
               <p>And much more!</p>
             </div>
           </div>
@@ -113,7 +113,7 @@ function SubscribeComponent({ validateInput, showFormatError, showEmptyFieldErro
 
         </div>
         <div className='img'>
-          <img src="../assets/images/illustration-sign-up-desktop.svg" />
+          <img src="../assets/images/illustration-sign-up-desktop.svg" alt="Two llustrated desktop screens overlapping each other on a red gradient background."/>
         </div>
       </div>
     </>
